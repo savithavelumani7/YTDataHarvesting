@@ -24,7 +24,6 @@ def get_channel_data(youtube, channel_id):
     ).execute()
 
     channel = channel_info_request['items'][0]
-    # channel_image = dict(image=channel['snippet']['thumbnails']['medium']['url'])
 
     channel_type = channel_info_request['items'][0]['topicDetails']['topicCategories']
     filtered_type = [i for i in channel_type if 'Lifestyle' not in i]
