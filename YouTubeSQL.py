@@ -44,7 +44,6 @@ def channel_video_comment():
     return channel
 
 
-#Fetching Channel list from  MongoDB
 def channel_list():
     channel_list = []
     for result in collection.find():
@@ -133,9 +132,8 @@ def extract_comment(channel_name_to_find):
 
         for video_id, video_data in video_dict.items():
             video_ids = video_data.get('video_id')
-            comments = video_data.get('Comments', {})  # Retrieve comments dictionary, default to empty if no comments
+            comments = video_data.get('Comments', {}) 
 
-            # Accessing comments for each video
             for comment_id, comment_data in comments.items():
                 comment_published_at_str = comment_data['Comment_Published_At']
                 try:
